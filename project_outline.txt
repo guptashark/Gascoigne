@@ -1,0 +1,21 @@
+Things the app needs to be able to do: 
+
+-Log in users: 
+	-Log in Students
+	-Log in parents
+	-log in teachers
+	-log in admins (me) 
+
+-Student features
+	-timed quizzes
+	-content folders/map
+	-messaging system to teachers. 
+	-data storing student performance + teacher comments. 
+
+-parent features
+	-answer key+solutions to timed quizzes *after* student has completed them. 
+	-content folders/map with potential parent hints. 
+	-messaging system to teachers. 
+	-view child's performance + instructor comments. 
+
+
