@@ -18,5 +18,9 @@ class TestHandler(webapp2.RequestHandler):
         
         t = jinja_env.get_template('test.html')
         self.response.write(t.render())
+
+    def post(self):
+        t = jinja_env.get_template('test_post.html')
+        self.response.write(t.render())
         
         
