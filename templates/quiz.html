@@ -25,6 +25,11 @@
 	<input type="submit" value="Submit"><br>
 </form>
 
+<br>
+
+{% for fruit in basket %}
+<li>{{ fruit }}</li>
+{% endfor %}
 
 {% endblock %}
 
