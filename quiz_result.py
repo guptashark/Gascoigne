@@ -9,6 +9,15 @@ class QuizResult(webapp2.RequestHandler):
         t = jinja_env.get_template('quiz.html')
         self.response.write(t.render())
     """
+
     def post(self):
+       # self.response.write("Yay!") 
+        name = self.request.POST['ans_1']
+        if(name == "7"):
+            self.response.write("you got the first question right!")
+        else:
+            self.response.write("you got the first question wrong!")
+        
+         
 
 
