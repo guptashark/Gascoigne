@@ -8,6 +8,8 @@
 
 <p> This is the page for setting up quizzes </p>
 
+<!--
+
 <form action="/quiz_result" method="post">
 	<p>What is 3 + 4?</p>
 
@@ -24,12 +26,24 @@
 	<br>
 	<input type="submit" value="Submit"><br>
 </form>
-
+-->
 <br>
 
-{% for fruit in basket %}
-<li>{{ fruit }}</li>
+<form action="/quiz" method="post">
+	<ol>
+{% for question in test %}
+
+	<li>	
+		{{ question[0] }} 
+		<br> 
+		<input type="text" name={{question[1]}}>
+	</li>
+	<br>
 {% endfor %}
+	</ol>
+<input type="submit" value="Submit">
+<br>
+</form>
 
 {% endblock %}
 
