@@ -4,7 +4,12 @@ from base_headers import jinja_env
 test_integers = [
         ('3 - 5 = ', "ans_01", "-2"),
         ('4 + 7 = ', "ans_02", "11"),
-        ('12 - 13 = ', "ans_03", "-1")]
+        ('12 - 13 = ', "ans_03", "-1"),
+        ('10 - 15 = ', "ans_04", "-5"),
+        ('15-10', "ans_05", "5"),
+        ('1+1', "ans_06", "2"),
+        ('1+2=', "ans_07", "3"),
+        ('2+15', "ans_08", "17")]
 
 
 class Quiz(webapp2.RequestHandler):
@@ -23,6 +28,3 @@ class Quiz(webapp2.RequestHandler):
             self.response.write("You passed the test!")
         else:
             self.response.write("You failed the test. :( ")
-            
-        
-

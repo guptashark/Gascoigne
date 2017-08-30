@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p> This is the quiz home page </p>
+
+<h1> Quiz list </h1>
+
+<ul>
+	<li><a href="/quiz/integers">Integers</a></li>
+	<li><a href="/quiz/fractions">Fractions</a></li>
+</ul>
+
+<form action="/test" method="get">
+	<input type="text">
+</form>
+
+{% endblock %}
