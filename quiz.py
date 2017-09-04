@@ -1,5 +1,7 @@
 import webapp2
 from base_headers import jinja_env
+from google.appengine.api import app_identity
+from google.appengine.api import mail
 
 test_integers = [
         ('3 - 5 = ', "ans_01", "-2"),
@@ -14,8 +16,10 @@ test_integers = [
 
 class Quiz(webapp2.RequestHandler):
     def get(self):
+        student_name = self.request.GET['student']
+        topic = self.request.GET['topic']
         t = jinja_env.get_template('quiz.html')
-        self.response.write(t.render(test = test_integers))
+        self.response.write(t.render(student = student_name, topic = topic, test = test_integers))
 
     def post(self):
         num_questions = len(test_integers)
@@ -26,5 +30,18 @@ class Quiz(webapp2.RequestHandler):
                 num_correct = num_correct + 1
         if(num_correct / float(num_questions) > 0.5):
             self.response.write("You passed the test!")
+
+            mail.send_mail(
+                    sender="Aishwary Gupta <guptashark@gmail.com>",
+                    to="Aishwary Gupta <guptashark@gmail.com>",
+                    subject="Quiz Results",
+                    body="You passed the test!")
+
         else:
             self.response.write("You failed the test. :( ")
+            mail.send_mail(
+                sender="Aishwary Gupta <guptashark@gmail.com>",
+                to="Aishwary Gupta <guptashark@gmail.com>",
+                subject="Quiz Results",
+                body="You passed the test!")
+ 

@@ -8,26 +8,10 @@
 
 <p> This is the page for setting up quizzes </p>
 
-<!--
-
-<form action="/quiz_result" method="post">
-	<p>What is 3 + 4?</p>
-
-	<input type="radio" name="ans_1" value="6"><label for="6"> 6</label><br>
-	<input type="radio" name="ans_1" value="7"><label for="7"> 7</label><br>
-	<input type="radio" name="ans_1" value="8"><label for="8"> 8</label><br>
-
-	<br>
-	<p>What is 7 + 9? </p>
-	<input type="radio" name="ans_2" value="16"><label for="16"> 16</label><br>
-	<input type="radio" name="ans_2" value="17"><label for="17"> 17</label><br>
-	<input type="radio" name="ans_2" value="18"><label for="18"> 18</label><br>
-	
-	<br>
-	<input type="submit" value="Submit"><br>
-</form>
--->
 <br>
+
+<h3>Student name: {{ student }}</h3>
+<h3>Quiz topic: {{ topic }}</h3>
 
 <form action="/quiz" method="post">
 	<ol>

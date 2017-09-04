@@ -2,17 +2,25 @@
 
 {% block content %}
 
-<p> This is the quiz home page </p>
-
 <h1> Quiz list </h1>
 
-<ul>
-	<li><a href="/quiz/integers">Integers</a></li>
-	<li><a href="/quiz/fractions">Fractions</a></li>
-</ul>
+<p> This is the quiz home page. Enter your name, select one of the quizzes below and click "start quiz". </p>
 
-<form action="/test" method="get">
-	<input type="text">
+<form action="/quiz" method="get">
+	
+	First name: <input type="text" name="student"> <br> 
+
+	<br>
+
+	<input type="radio" name="topic" value="integers">Integers<br>
+	<input type="radio" name="topic" value="fractions"> Fractions<br>
+	<input type="radio" name="topic" value="basic algebra">Algebra<br>
+	<input type="radio" name="topic" value="factoring"> Factoring<br> 
+
+	<br>
+
+	<input type="submit" value="Start Quiz">
+  
 </form>
 
 {% endblock %}
