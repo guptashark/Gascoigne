@@ -6,10 +6,6 @@
 
 {% block content %}
 
-<p> This is the page for setting up quizzes </p>
-
-<br>
-
 <h3>Student name: {{ student }}</h3>
 <h3>Quiz topic: {{ topic }}</h3>
 
@@ -20,7 +16,10 @@
 	<li>	
 		{{ question[0] }} 
 		<br> 
-		<input type="text" name={{question[1]}}>
+		<input type="radio" name={{question[1]}} value={{question[2]}}> {{question[2]}} <br> 
+		<input type="radio" name={{question[1]}} value={{question[3]}}> {{question[3]}} <br> 
+		<input type="radio" name={{question[1]}} value={{question[4]}}> {{question[4]}} <br> 
+		<input type="radio" name={{question[1]}} value={{question[5]}}> {{question[5]}} <br> 
 	</li>
 	<br>
 {% endfor %}
