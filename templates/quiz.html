@@ -10,16 +10,18 @@
 <h3>Quiz topic: {{ topic }}</h3>
 
 <form action="/quiz" method="post">
+
+	<input type="hidden" name="topic" value="{{topic}}">
 	<ol>
 {% for question in test %}
 
 	<li>	
 		{{ question[0] }} 
 		<br> 
-		<input type="radio" name={{question[1]}} value={{question[2]}}> {{question[2]}} <br> 
-		<input type="radio" name={{question[1]}} value={{question[3]}}> {{question[3]}} <br> 
-		<input type="radio" name={{question[1]}} value={{question[4]}}> {{question[4]}} <br> 
-		<input type="radio" name={{question[1]}} value={{question[5]}}> {{question[5]}} <br> 
+		<input type="radio" name="{{question[1]}}" value="{{question[2]}}"> {{question[2]}} <br> 
+		<input type="radio" name="{{question[1]}}" value="{{question[3]}}"> {{question[3]}} <br> 
+		<input type="radio" name="{{question[1]}}" value="{{question[4]}}"> {{question[4]}} <br> 
+		<input type="radio" name="{{question[1]}}" value="{{question[5]}}"> {{question[5]}} <br> 
 	</li>
 	<br>
 {% endfor %}
