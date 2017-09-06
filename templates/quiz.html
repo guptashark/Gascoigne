@@ -12,6 +12,8 @@
 <form action="/quiz" method="post">
 
 	<input type="hidden" name="topic" value="{{topic}}">
+	<input type="hidden" name="student" value="{{ student }}">
+
 	<ol>
 {% for question in test %}
 

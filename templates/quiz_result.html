@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1> Quiz Result </h1>
+<h3> Student: {{student}} </h3>
+<h4> Topic: {{topic}} </h3> 
+
+<p> You scored {{num_correct}} out of {{num_questions}} on the test. {{ result_msg }} </p>
+
+
+{% endblock %}

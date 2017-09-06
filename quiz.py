@@ -44,31 +44,34 @@ class Quiz(webapp2.RequestHandler):
         
 
     def post(self):
+        student_name = self.request.POST['student']
         topic = self.request.POST['topic'] 
         topic_test = topic_mapping[topic]
         num_questions = len(topic_test)
         num_correct = 0
         for question in topic_test:
             student_ans = self.request.POST[question[1]]
-            self.response.write(student_ans) 
-            self.response.write("<br><h1>HERE!</h1>")
-            self.response.write(question[6])
-            self.response.write("<br><h1>HERE2!</h1>")
             if(student_ans == question[6]):
                 num_correct = num_correct + 1
+       
+        passed = False
+        result_msg = ""
         if(num_correct / float(num_questions) > 0.5):
-            self.response.write("You passed the test!")
-            self.response.write(str(num_correct))
-            self.response.write("/")
-            self.response.write(str(num_questions))
+            passed = True
+            result_msg = "You passed the test!"
 
         else:
-            self.response.write("You failed the test. :( ")
-            self.response.write(str(num_correct))
-            self.response.write("/")
-            self.response.write(str(num_questions))
+            passed = False
+            result_msg = "You failed the test. Maybe you need more practice?" 
 
 
+        t = jinja_env.get_template('quiz_result.html')
+        self.response.write(t.render(
+            student = student_name,
+            topic = topic,
+            num_correct = str(num_correct), 
+            num_questions = str(num_questions),
+            result_msg = result_msg))
 """
             mail.send_mail(
                     sender="Aishwary Gupta <guptashark@gmail.com>",
