@@ -40,12 +40,14 @@ topic_mapping = {
 class Quiz(webapp2.RequestHandler):
     def get(self):
         student_name = self.request.GET['student']
-        if 'topic' not in self.request.GET:
+        if student_name == "":
             t = jinja_env.get_template('quiz_home.html')
-            self.response.write(t.render())
-        elif 'student_name' not in self.request.GET: 
+            self.response.write(t.render(topic_error = "Please enter your name."))
+        elif 'topic' not in self.request.GET: 
             t = jinja_env.get_template('quiz_home.html')
-            self.response.write(t.render())
+            student_name = self.request.GET['student']
+            self.response.write(t.render(name_error = "Please select a quiz topic.",
+                    student_name = student_name))
         else: 
             student_name = self.request.GET['student']
             topic = self.request.GET['topic']

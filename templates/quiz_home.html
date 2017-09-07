@@ -7,9 +7,11 @@
 <p> This is the quiz home page. Enter your name, select one of the quizzes below and click "start quiz". </p>
 
 <form action="/quiz" method="get">
-	
-	First name: <input type="text" name="student"> <br> 
 
+	<div style="color: red"> {{ name_error }} </div> 	
+	First name: <input type="text" name="student" value="{{student_name}}"> <br> 
+
+	<div style="color: red"> {{ topic_error }} </div>
 	<br>
 
 	<input type="radio" name="topic" value="integers">Integers<br>
