@@ -28,13 +28,64 @@ test_quadratic_inequalities_1 = [
             "x > 3", 
             "x < 4", 
             "3 < x < 4", 
-            "3 < x < 4")]
+            "3 < x < 4"),
+        ('x(x-1) > 0', "ans_03", 
+            "x > -1 and x < 0",
+            "0 < x < 1", 
+            "x > 1", 
+            "x < 0 and x > 1",
+            "x < 0 and x > 1"),
+        ('(x - 5)(x + 5) < 0', "ans_04",
+            "-5 > x > 5",
+            "-5 < x < 5",
+            "x < -5 and x > 5",
+            "no solution",
+            "-5 < x < 5"),
+        ('(x - 5)(x - 5) > 0', "ans_05", 
+            "-5 > x > 5",
+            "x > -5",
+            "-5 < x < 5",
+            "x < 5 or x > 5",
+            "x < 5 or x > 5")]
+
+test_quadratic_inequalities_2 = [
+        ('x^2 + 5x - 14 < 0', "ans_01",
+            "x < -7 and x > 2",
+            "x < -2 and x > 7", 
+            "-7 < x < 2",
+            "-2 < x < 7",
+            "-7 < x < 2"),
+        ('x^2 - 4x - 45 < 0', "ans_02", 
+            "-5 < x < 9",
+            "-5 > x > 9",
+            "5 < x < -9", 
+            "5 > x > -9",
+            "-5 < x < 9"),
+        ('x^2 + x - 20 > 0', "ans_03",
+            "-5 < x < 4",
+            "x < -5 or x > 4",
+            "x < -5 and x > 4", 
+            "4 < x < -5",
+            "x < -5 or x > 4"),
+        ('x^2 + 15x + 36 > 0', "ans_04",
+            "-12 < x < -3",
+            "x < -12 and x > -3",
+            "x < -12 or x > -3",
+            "x < 3 or x > 12",
+            "x < -12 or x > -3"),
+        ('x^2 - 15x + 36 < 0', "ans_05",
+            "3 < x and x < 12",
+            "3 < x or x < 12",
+            "-12 < x < -3",
+            "x < 3 or x > 12",
+            "3 < x and x < 12")]
 
 
 topic_mapping = {
         "integers": test_integers,
         "multiplication": test_multiplication,
-        "quadratic inequalities 1": test_quadratic_inequalities_1}
+        "quadratic inequalities 1": test_quadratic_inequalities_1,
+        "quadratic inequalities 2": test_quadratic_inequalities_2}
 
 
 class Quiz(webapp2.RequestHandler):
