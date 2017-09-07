@@ -8,10 +8,9 @@
 
 <form action="/quiz" method="get">
 
-	<div style="color: red"> {{ name_error }} </div> 	
+
 	First name: <input type="text" name="student" value="{{student_name}}"> <br> 
 
-	<div style="color: red"> {{ topic_error }} </div>
 	<br>
 
 	<input type="radio" name="topic" value="integers">Integers<br>
@@ -22,6 +21,9 @@
 	<br>
 
 	<input type="submit" value="Start Quiz">
+
+	<br> 
+	<div style="color: red"> {{ name_error }} {{ topic_error }} </div> 	
   
 </form>
 
